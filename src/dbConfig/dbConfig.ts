@@ -1,4 +1,3 @@
-import { log } from "console";
 import mongoose from "mongoose";
 
 export async function connect() {
@@ -10,9 +9,8 @@ export async function connect() {
         })
 
         connection.on('error',(err)=>{
-            console.log('MongoDB connection error. Please make sure MongoDB is running.' +  err);
+            console.log('MongoDB connection error. Please make sure MongoDB is running.' +  err.message);
             process.exit();
-            
         })
 
     } catch (error) {
